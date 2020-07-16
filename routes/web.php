@@ -18,3 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/auth/redirect/{provider}', 'SocialController@redirect');
+
+Route::get('auth/{provider}/callback', 'SocialController@callback');
+// http://localhost:8000/callback/facebook
+
+Auth::routes();
